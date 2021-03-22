@@ -2,11 +2,13 @@ package com.emissaoguias.fgf.models;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
@@ -41,5 +43,8 @@ public class Empresa implements Serializable {
 	private String informacoes;
 	
 	private String mes;
+	
+	@OneToMany
+	private List<Endereco> enderecos;
 	
 }
