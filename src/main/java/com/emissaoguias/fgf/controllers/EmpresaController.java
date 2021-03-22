@@ -2,6 +2,7 @@ package com.emissaoguias.fgf.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -36,12 +37,12 @@ public class EmpresaController {
 		return mv;
 	}
 	
-//	@RequestMapping("/{id}")
-//	public ModelAndView detalhesEmpresa(@PathVariable("id") long id) {
-//		Empresa empresa = er.findById(id);
-//		ModelAndView mv = new ModelAndView("empresa/detalhesEmpresa");
-//		mv.addObject("empresa", empresa);
-//		return mv;
-//	}
+	@RequestMapping("/{id}")
+	public ModelAndView detalhesEmpresa(@PathVariable("id") long id) {
+		Empresa empresa = er.findById(id);
+		ModelAndView mv = new ModelAndView("empresa/detalhesEmpresa");
+		mv.addObject("empresa", empresa);
+		return mv;
+	}
 
 }

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.css"  media="screen,projection"/>
+    <title>Empresas</title>
+</head>
+
+<body>
+	<h3>Empresa</h3>
+    <h3> <a href="/empresas" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Empresas</a> </h3>
+    <div th:each="empresa : ${empresa}" class="container">
+    	<div class="row">
+    		<p><b>EMPRESA:</b> <span th:text="${empresa.nome}"></span> </p>
+    		<p><b>CNPJ:</b> <span th:text="${empresa.cnpj}"></span> </p>
+    		<p><b>VENCIMENTO:</b> <span th:text="${empresa.dtVencimento}"></span> </p>
+    		<p><b>PAGAMENTO:</b> <span th:text="${empresa.dtPagamento}"></span> </p>
+    		<p><b>DOCUMENTO:</b> <span th:text="${empresa.numDoc}"></span> </p>
+    		<p><b>RECEITA:</b> <span th:text="${empresa.vlReceita}"></span> </p>
+    		<p><b>INFORMAÇÕES:</b> <span th:text="${empresa.informacoes}"></span> </p>
+    		<p><b>MÊS:</b> <span th:text="${empresa.mes}"></span> </p>
+    	</div>
+    	
+<!--     	<form method="post"> -->
+<!--     		<input type="text" value="" name="rua"/> -->
+<!--     		<input type="text" value="" name="numero"/> -->
+<!--     		<input type="text" value="" name="cidade"/> -->
+<!--     		<input type="text" value="" name="estado"/> -->
+<!--     		<button class="waves-effect waves-light btn" type="submit"><i class="material-icons right">submit</i>Adicionar</button> -->
+        
+<!--     	</form> -->
+    </div>
+            
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+</body>
+</html>

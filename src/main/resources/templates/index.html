@@ -31,8 +31,7 @@
     		
     	<tbody>
 	        <tr th:each="empresa : ${empresas}">
-<!-- 	            <td> <a th:href="${(#mvc.url('EC#detalhesEmpresa').arg(0, empresa.id)).build()}"><span th:text="${empresa.nome}"></span></a></td> -->
-	            <td><span th:text="${empresa.nome}"></span></td>
+	            <td> <a th:href="${(#mvc.url('EC#detalhesEmpresa').arg(0, empresa.id)).build()}"><span th:text="${empresa.nome}"></span></a></td>
 	            <td><span th:text="${empresa.cnpj}"></span></td>
 	            <td><span th:text="${empresa.dtVencimento}"></span></td>
 	            <td><span th:text="${empresa.dtPagamento}"></span></td>
