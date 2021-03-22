@@ -28,13 +28,13 @@ public class EmpresaController {
 		return "redirect:/cadastrarEmpresa";
 	}
 
-//	@RequestMapping("/empresas")
-//	public ModelAndView listaEmpresas() {
-//		ModelAndView mv = new ModelAndView("/index");
-//		Iterable<Empresa> empresas = er.findAll();
-//		mv.addObject("empresas", empresas);
-//		return mv;
-//	}
+	@RequestMapping("/empresas")
+	public ModelAndView listaEmpresas() {
+		ModelAndView mv = new ModelAndView("/index");
+		Iterable<Empresa> empresas = er.findAll();
+		mv.addObject("empresas", empresas);
+		return mv;
+	}
 	
 //	@RequestMapping("/{id}")
 //	public ModelAndView detalhesEmpresa(@PathVariable("id") long id) {
