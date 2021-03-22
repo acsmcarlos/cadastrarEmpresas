@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.css"  media="screen,projection"/>
+    
+    <title>Emissão ::||:: GUIAS</title>
+
+<body>
+	<h3>Cadastro de Empresas | Emissão de Guias ::|:: FGF</h3>
+	<h3> <a href="/empresas" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Lista de Empresas</a> </h3>
+	
+    <form class="container" method="post">
+    	<div class="row">    		
+    		<div class="input-field col s9">
+		       Nome: <input type="text" value="" name="nome"/>    		
+    		</div>
+    		
+    		<div class="input-field col s3">
+        		Cnpj: <input type="text" value="" name="cnpj"/>
+    		</div>
+    	</div>
+		
+		<div class="row">
+			<div class="input-field col s3">
+		        Vencimento: <input type="Date" value="" name="dtVencimento"/>
+		    </div>
+    		<div class="input-field col s3">
+		        Pagamento: <input type="Date" value="" name="dtPagamento"/>
+		    </div>
+    		<div class="input-field col s2">
+		        Documento: <input type="text" value="" name="numDoc"/>
+		    </div>
+    		<div class="input-field col s2">
+		        Receita: <input type="text" value="" name="vlReceita"/>
+			</div>
+        	<div class="input-field col s2">
+		    	Mês: <input type="Number" value="" name="mes"/>
+        	</div>
+		</div>
+		    
+		Informações:
+        <textarea rows="10" cols="" name="informacoes"></textarea>
+
+        <button class="waves-effect waves-light btn" type="submit"><i class="material-icons right">save</i>Salvar</button>
+        
+    </form>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+</body>
+</html>
