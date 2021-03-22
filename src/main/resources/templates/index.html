@@ -9,13 +9,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.css"  media="screen,projection"/>
     
-    <title>Empresas</title>
+    <title>Empresas</title>    
 </head>
 <body>
 
 	<h3>Lista de Empresas</h3>
     <table>
-    <h3> <a href="/cadastrarEmpresa" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Empresa</a> </h3>
+    	<h3> <a href="/cadastrarEmpresa" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Empresa</a> </h3>
     	<thead>
     		<tr>
     			<th>NOME</th>
@@ -32,6 +32,7 @@
     	<tbody>
 	        <tr th:each="empresa : ${empresas}">
 <!-- 	            <td> <a th:href="${(#mvc.url('EC#detalhesEmpresa').arg(0, empresa.id)).build()}"><span th:text="${empresa.nome}"></span></a></td> -->
+	            <td><span th:text="${empresa.nome}"></span></td>
 	            <td><span th:text="${empresa.cnpj}"></span></td>
 	            <td><span th:text="${empresa.dtVencimento}"></span></td>
 	            <td><span th:text="${empresa.dtPagamento}"></span></td>
