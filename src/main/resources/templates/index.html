@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.css"  media="screen,projection"/>
+    
+    <title>Empresas</title>
+</head>
+<body>
+
+	<h3>Lista de Empresas</h3>
+    <table>
+    <h3> <a href="/cadastrarEmpresa" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Empresa</a> </h3>
+    	<thead>
+    		<tr>
+    			<th>NOME</th>
+    			<th>CNPJ</th>
+    			<th>VENCIMENTO</th>
+    			<th>PAGAMENTO</th>
+    			<th>DOCUMENTO</th>
+    			<th>RECEITA</th>
+    			<th>INFORMAÇÕES</th>
+    			<th>MÊS</th>
+    		</tr>
+    	</thead>   				
+    		
+    	<tbody>
+	        <tr th:each="empresa : ${empresas}">
+	            <td> <a th:href="${(#mvc.url('EC#detalhesEmpresa').arg(0, empresa.id)).build()}"><span th:text="${empresa.nome}"></span></a></td>
+	            <td><span th:text="${empresa.cnpj}"></span></td>
+	            <td><span th:text="${empresa.dtVencimento}"></span></td>
+	            <td><span th:text="${empresa.dtPagamento}"></span></td>
+	            <td><span th:text="${empresa.numDoc}"></span></td>
+	            <td><span th:text="${empresa.vlReceita}"></span></td>
+	            <td><span th:text="${empresa.informacoes}"></span></td>
+	            <td><span th:text="${empresa.mes}"></span></td>
+	        </tr>
+    	</tbody>
+    </table>
+            
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+</body>
+</html>
