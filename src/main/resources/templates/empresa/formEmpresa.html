@@ -8,6 +8,7 @@
     
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="style/styleCss.css"/>
     
     <title>Emissão ::||:: GUIAS</title>
 
@@ -23,47 +24,48 @@
 		    </div>
   		</nav>
 	</header>
-	
-	
-	
-    <form class="container" method="post" >
-	<th:block th:include="mensagemValidacao"></th:block>
-    	<div class="row">    		
-    		<div class="input-field col s9">
-		       Nome: <input type="text" value="" name="nome" placeholder="Nome da Empresa"/>    		
-    		</div>
-    		
-    		<div class="input-field col s3">
-        		Cnpj: <input type="text" value="" name="cnpj"/>
-    		</div>
-    	</div>
-		
-		<div class="row">
-			<div class="input-field col s3">
-		        Vencimento: <input type="date" value="" name="dtVencimento"/>
-		    </div>
-    		<div class="input-field col s3">
-		        Pagamento: <input type="date" value="" name="dtPagamento"/>
-		    </div>
-    		<div class="input-field col s2">
-		        Documento: <input type="number" value="" name="numDoc"/>
-		    </div>
-    		<div class="input-field col s2">
-		        Receita: <input type="text" value="" name="vlReceita"/>
+
+		<form class="container formEmpresa" method="post">
+			<th:block th:include="mensagemValidacao"></th:block>
+			<div class="row">
+				<div class="input-field col s9">
+					Nome: <input type="text" value="" name="nome"
+						placeholder="Nome da Empresa" />
+				</div>
+
+				<div class="input-field col s3">
+					Cnpj: <input type="text" value="" name="cnpj" />
+				</div>
 			</div>
-        	<div class="input-field col s2">
-		    	Mês: <input type="number" value="" name="mes"/>
-        	</div>
-		</div>
-		    
-		Informações:
-        <textarea rows="10" cols="" name="informacoes"></textarea>
 
-        <button class="waves-effect waves-light btn" type="submit"><i class="material-icons right">save</i>Salvar</button>
-        
-    </form>
+			<div class="row">
+				<div class="input-field col s3">
+					Vencimento: <input type="date" value="" name="dtVencimento" />
+				</div>
+				<div class="input-field col s3">
+					Pagamento: <input type="date" value="" name="dtPagamento" />
+				</div>
+				<div class="input-field col s2">
+					Documento: <input type="number" value="" name="numDoc" />
+				</div>
+				<div class="input-field col s2">
+					Receita: <input type="text" value="" name="vlReceita" />
+				</div>
+				<div class="input-field col s2">
+					Mês: <input type="number" value="" name="mes" />
+				</div>
+			</div>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
+			Informações:
+			<textarea rows="10" cols="" name="informacoes"></textarea>
+
+			<button class="waves-effect waves-light btn" type="submit">
+				<i class="material-icons right">save</i>Salvar
+			</button>
+
+		</form>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
 </body>
 </html>

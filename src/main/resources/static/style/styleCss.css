@@ -1,0 +1,22 @@
+.detalhesEmpresa  {
+	box-shadow: 0 0 5px grey;
+	padding: 0px 10px 5px 10px;
+	margin-bottom: 20px;
+}
+
+.formEndereco {
+	box-shadow: 0 0 5px grey;
+	padding: 0px 10px 5px 10px;
+	margin-bottom: 30px;
+}
+
+.formEmpresa {
+	box-shadow: 0 0 5px grey;
+	padding: 0px 10px 10px 10px;
+	margin-bottom: 20px;
+}
+
+.nav-wrapper {
+	box-shadow: 0 0 5px grey;
+	padding: 0px 10px 0px 10px;
+}

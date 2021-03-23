@@ -1,78 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.css"  media="screen,projection"/>
-    <title>Empresas</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<link type="text/css" rel="stylesheet"
+	href="/materialize/css/materialize.css" media="screen,projection" />
+<link rel="stylesheet" href="style/styleCss.css" />
+
+<title>Empresas</title>
 </head>
 
 <body>
 	<header>
 		<nav>
-		    <div class="nav-wrapper">
-	      		<a href="#" class="brand-logo">Empresa</a>
-		      	<ul id="nav-mobile" class="right hide-on-med-and-down">
-			        <li> <a href="/empresas" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Ir para Lista de Empresas</a> </li>
-		      	</ul>
-		    </div>
-  		</nav>
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo">Empresa</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="/empresas" class="waves-effect waves-light btn">
+					<i class="material-icons left">format_list_bulleted</i>Ir para Lista de Empresas</a></li></ul>
+			</div>
+		</nav>
 	</header>
 
-	
-    <div th:each="empresa : ${empresa}" class="container">
-	<th:block th:include="mensagemValidacao"></th:block>
-    	<div class="row">
-    		<div class="input-field col s8">
-    			<p><b>EMPRESA:</b> <span th:text="${empresa.nome}"></span> </p>
-    		</div>
-    		<div class="input-field col s4">
-    			<p><b>CNPJ:</b> <span th:text="${empresa.cnpj}"></span> </p>
-    		</div>
-    	</div>
-    	<div class="row">
-    		<div class="input-field col s3">
-	    		<p><b>VENCIMENTO:</b> <span th:text="${empresa.dtVencimento}"></span> </p>
-	    	</div>
-	    	<div class="input-field col s3">
-	    		<p><b>PAGAMENTO:</b> <span th:text="${empresa.dtPagamento}"></span> </p>
-	    	</div>
-	    	<div class="input-field col s3">
-	    		<p><b>DOCUMENTO:</b> <span th:text="${empresa.numDoc}"></span> </p>
-	    	</div>
-	    	<div class="input-field col s3">
-	    		<p><b>RECEITA:</b> <span th:text="${empresa.vlReceita}"></span> </p>
-	    	</div>
-    	</div>
-    	<div class="row">
-    		<div class="input-field col s4">
-	    		<p><b>MÊS:</b> <span th:text="${empresa.mes}"></span> </p>
-	    	</div>
-	    	
-		    <div th:each="endereco : ${enderecos}">
-			    <div class="input-field col s4">
-		    		<p> <b>CIDADE:</b> <span th:text="${endereco.cidade}"></span> </p>
-		    	</div>
-			    <div class="input-field col s4">
-		    		<p> <b>ESTADO:</b> <span th:text="${endereco.estado}"></span> </p>
-		    	</div>
-		    </div>
-		</div>
-		    	<p><b>INFORMAÇÕES:</b> <span th:text="${empresa.informacoes}"></span> </p>
-    	
-    	<form method="post" th:object="${endereco}">
-    		<b>CIDADE</b><input type="text" value="" name="cidade"/>
-    		<b>ESTADO</b><input type="text" value="" name="estado"/>
-    		<button class="waves-effect waves-light btn" type="submit"><i class="material-icons right">submit</i>Adicionar</button>
-    	</form>
-    </div>
-    
-            
+	<div th:each="empresa : ${empresa}" class="container detalhesEmpresa">
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
-    <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+		<th:block th:include="mensagemValidacao"></th:block>
+
+		<div class="row">
+			<div class="input-field col s8">
+				<p><b>EMPRESA:</b> <span th:text="${empresa.nome}"></span></p>
+			</div>
+			<div class="input-field col s4">
+				<p><b>CNPJ:</b> <span th:text="${empresa.cnpj}"></span></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s3">
+				<p><b>VENCIMENTO:</b> <span th:text="${empresa.dtVencimento}"></span></p>
+			</div>
+			<div class="input-field col s3">
+				<p><b>PAGAMENTO:</b> <span th:text="${empresa.dtPagamento}"></span></p>
+			</div>
+			<div class="input-field col s3">
+				<p><b>DOCUMENTO:</b> <span th:text="${empresa.numDoc}"></span></p>
+			</div>
+			<div class="input-field col s3">
+				<p><b>RECEITA:</b> <span th:text="${empresa.vlReceita}"></span></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s4">
+				<p><b>MÊS:</b> <span th:text="${empresa.mes}"></span></p>
+			</div>
+
+			<div th:each="endereco : ${enderecos}">
+				<div class="input-field col s4">
+					<p><b>CIDADE:</b> <span th:text="${endereco.cidade}"></span></p>
+				</div>
+				<div class="input-field col s4">
+					<p><b>ESTADO:</b> <span th:text="${endereco.estado}"></span></p>
+				</div>
+			</div>
+		</div>
+		<p><b>INFORMAÇÕES:</b> <span th:text="${empresa.informacoes}"></span></p>
+	</div>
+
+	<div class="container formEndereco">
+		<form method="post" th:object="${endereco}">
+			<b>CIDADE</b><input type="text" value="" name="cidade" /> 
+			<b>ESTADO</b><input type="text" value="" name="estado" />
+			<button class="waves-effect waves-light btn" type="submit"> <i class="material-icons right">submit</i>Adicionar</button>
+		</form>
+	</div>
+
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
 </body>
 </html>
