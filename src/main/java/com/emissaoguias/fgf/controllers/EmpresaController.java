@@ -8,13 +8,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.emissaoguias.fgf.models.Empresa;
+import com.emissaoguias.fgf.models.Endereco;
 import com.emissaoguias.fgf.repository.EmpresaRepository;
+import com.emissaoguias.fgf.repository.EnderecoRepository;
 
 @Controller
 public class EmpresaController {
 
 	@Autowired
 	private EmpresaRepository er;
+	
+	@Autowired
+	private EnderecoRepository cr;
 
 	@RequestMapping(value = "/cadastrarEmpresa", method = RequestMethod.GET)
 	public String form() {
@@ -37,12 +42,24 @@ public class EmpresaController {
 		return mv;
 	}
 	
-	@RequestMapping("/{id}")
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ModelAndView detalhesEmpresa(@PathVariable("id") long id) {
 		Empresa empresa = er.findById(id);
 		ModelAndView mv = new ModelAndView("empresa/detalhesEmpresa");
 		mv.addObject("empresa", empresa);
+		
+		Iterable<Endereco> enderecos = cr.findByEmpresa(empresa);
+		mv.addObject("enderecos", enderecos);
+		
 		return mv;
+	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.POST)
+	public String detalhesEmpresaPost(@PathVariable("id") long id, Endereco endereco) {
+		Empresa empresa = er.findById(id);
+		endereco.setEmpresa(empresa);
+		cr.save(endereco);
+		return "redirect:/{id}";
 	}
 
 }
