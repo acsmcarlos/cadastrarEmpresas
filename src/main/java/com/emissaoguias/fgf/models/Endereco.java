@@ -14,10 +14,12 @@ import lombok.Setter;
 public class Endereco {
 	
 	@Id
-	@NotEmpty
 	private Long id;
 	
+	@NotEmpty
 	private String cidade;
+	
+	@NotEmpty
 	private String estado;
 	
 	@OneToOne

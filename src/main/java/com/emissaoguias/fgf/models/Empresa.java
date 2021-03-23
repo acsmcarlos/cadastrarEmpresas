@@ -9,6 +9,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
@@ -26,22 +30,49 @@ public class Empresa implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	@NotEmpty 
+	@NotNull 
+	@NotBlank
+	@Size(min=2, max=100, message="Tem de ter pelo menos 2 letras") 
 	private String nome;
+	
+	@NotEmpty 
+	@NotNull 
+	@NotBlank
+	@Size(max=14, message="Tem de ter pelo menos 14 caracteres") 
 	private String cnpj;
 	
+	@NotEmpty 
+	@NotNull 
+	@NotBlank
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dtVencimento;
 	
+	@NotEmpty 
+	@NotNull 
+	@NotBlank
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dtPagamento;
 	
+	@NotEmpty 
+	@NotNull 
+	@NotBlank
 	private String numDoc;
 	
+	@NotEmpty 
+	@NotNull(message = "Campo não pode estar vazio")
+	@NotBlank
 	@NumberFormat(pattern = "0.00")
 	private String vlReceita;
 	
+	@NotEmpty 
+	@NotNull 
+	@NotBlank
 	private String informacoes;
 	
+	@NotEmpty 
+	@NotNull 
+	@NotBlank
 	private String mes;
 	
 	@OneToMany
