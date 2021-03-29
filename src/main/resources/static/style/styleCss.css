@@ -19,4 +19,9 @@
 .nav-wrapper {
 	box-shadow: 0 0 5px grey;
 	padding: 0px 10px 0px 10px;
+	background-color: #4063bf;
+}
+
+.waves-effect {
+	background-color: #0000ff;
 }

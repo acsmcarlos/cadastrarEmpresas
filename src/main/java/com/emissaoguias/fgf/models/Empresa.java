@@ -39,18 +39,13 @@ public class Empresa implements Serializable {
 	@NotEmpty 
 	@NotNull 
 	@NotBlank
-	@Size(max=14, message="Tem de ter pelo menos 14 caracteres") 
 	private String cnpj;
 	
-	@NotEmpty 
 	@NotNull 
-	@NotBlank
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dtVencimento;
 	
-	@NotEmpty 
 	@NotNull 
-	@NotBlank
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dtPagamento;
 	

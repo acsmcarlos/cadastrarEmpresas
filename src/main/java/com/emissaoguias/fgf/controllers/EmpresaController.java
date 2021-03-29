@@ -63,6 +63,13 @@ public class EmpresaController {
 
 		return mv;
 	}
+	
+	@RequestMapping("/deletar")
+	public String deletarEmpresa(long id) {
+		Empresa empresa = er.findById(id);
+		er.delete(empresa);
+		return "redirect:/empresas";
+	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.POST)
 	public String detalhesEmpresaPost(@PathVariable("id") long id, @Valid Endereco endereco,

@@ -36,6 +36,7 @@
     			<th>RECEITA</th>
     			<th>INFORMAÇÕES</th>
     			<th>MÊS</th>
+    			<th>EXCLUIR</th>
     		</tr>
     	</thead>   				
     		
@@ -50,6 +51,7 @@
 	            <td><span th:text="${empresa.vlReceita}"></span></td>
 	            <td><span th:text="${empresa.informacoes}"></span></td>
 	            <td><span th:text="${empresa.mes}"></span></td>
+	            <td><a class="waves-effect2 waves-light" th:href="${(#mvc.url('EC#deletarEmpresa').arg(0, empresa.id)).build()}"><i class="material-icons left">delete</i></a></td>
 	        </tr>
     	</tbody>
     </table>
